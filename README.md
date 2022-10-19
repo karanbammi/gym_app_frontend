@@ -5,7 +5,7 @@
   src="https://user-images.githubusercontent.com/108460399/196797550-bd41d768-397e-469a-b048-7a294a4b9a46.png"
   alt="Alt text"
   title="Optional title"
-  style="display: inline-block; margin: 0 auto; max-width: 100px">
+  style="display: inline-block; margin: 0 auto; max-width: 50px">
 
 ![image](https://user-images.githubusercontent.com/108460399/196797550-bd41d768-397e-469a-b048-7a294a4b9a46.png)
 
