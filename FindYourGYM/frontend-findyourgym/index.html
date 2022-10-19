@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<script src="js/mobile.js" type="text/javascript"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div id="navigation">
+				<span id="mobile-navigation">&nbsp;</span>
+				<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+				<ul id="menu">
+					<li >
+						<a href="register.html">Register</a>
+					</li>
+					<li class="selected">
+						<a href="index.html">Log-in</a>
+					</li>
+					<li>
+						<a href="contact1.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body" class="register">
+			<div>
+				<h1>Log-in</h1>
+				<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.1);">
+					<input id="email" style="width: 600px; height:40px" placeholder="Email">
+					<input type="password" id="password" style="width: 600px; height:40px; margin-top: 10px;" placeholder="Password">
+					<button id="login" style="width: 600px; margin-top: 10px; height: 40px; border: 2px solid white; background: rgba(0,0,0,0.1); color:white; cursor: pointer;">LOGIN</button>
+				</div>
+		<div id="footer">
+			<div>
+				<div class="connect">
+					<a href="https://twitter.com/findyourgym?" class="twitter">twitter</a>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		 document.getElementById('login').addEventListener('click', function () {
+          console.log("Login button clicked");
+          
+          const em = document.getElementById('email').value;
+          const pass = document.getElementById('password').value;
+
+          if(em == "" || pass == "") return;
+          axios.post('https://karan-backend-gym.herokuapp.com/api/auth', {email:em, password:pass})
+            .then(response => {
+                if(response){
+					localStorage.setItem("currentUser",response.data.username);
+					window.location.replace("./home.html");
+				} 
+            })
+            .catch(err => console.log(err.response));
+    });
+	</script>
+</body>
+</html>
