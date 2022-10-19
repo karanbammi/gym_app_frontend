@@ -72,6 +72,7 @@
           axios.post('https://karan-backend-gym.herokuapp.com/api/users', user)
             .then(response => {
               //Redirecting to Homepage
+			  localStorage.setItem("currentUser",response.data.username);
 			  window.location.replace("./home.html");
             })
             .catch(error => console.error(error));

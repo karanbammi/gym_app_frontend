@@ -29,6 +29,9 @@
 					<li>
 						<a href="index.html">Logout</a>
 					</li>
+					<li>
+						<span id="currentUser" style="font-size: 16px; font-weight: bolder; color: green;"></span>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -57,5 +60,9 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		const user = localStorage.getItem("currentUser");
+		document.getElementById("currentUser").innerText = "Welcome " + user.toUpperCase();
+	</script>
 </body>
 </html>

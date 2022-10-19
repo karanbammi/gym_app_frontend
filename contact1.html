@@ -73,10 +73,10 @@
         axios.post('https://karan-backend-gym.herokuapp.com/api/contactus', {username, email, message})
           .then(response => {
               alert("Thank you, We will reach out to you shortly!");
+			  window.location.replace('./home.html');
           })
           .catch(err => console.log(err.response));
 
-          window.location.replace('./home.html');
     });
 	</script>
 </body>
