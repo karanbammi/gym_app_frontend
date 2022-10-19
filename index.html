@@ -54,7 +54,7 @@
           const pass = document.getElementById('password').value;
 
           if(em == "" || pass == "") return;
-          axios.post('http://localhost:3000/api/auth', {email:em, password:pass})
+          axios.post('https://karan-backend-gym.herokuapp.com/api/auth', {email:em, password:pass})
             .then(response => {
                 if(response) window.location.replace("./home.html");
             })

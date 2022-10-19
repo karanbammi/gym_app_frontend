@@ -70,7 +70,7 @@
 
         if(username == "" || email == "" || message == "") return;
         
-        axios.post('http://localhost:3000/api/contactus', {username, email, message})
+        axios.post('https://karan-backend-gym.herokuapp.com/api/contactus', {username, email, message})
           .then(response => {
               alert("Thank you, We will reach out to you shortly!");
           })
